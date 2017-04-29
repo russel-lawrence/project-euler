@@ -1,0 +1,35 @@
+x=0
+
+for i in range(1,9999):
+
+	l=''
+
+	for j in range(1,98765):
+
+		if len((l+str(i*j)))<=9:
+
+			l+=str(i*j)
+
+		else:
+
+			break
+
+	p=''
+
+	if int(l)>x and len(l)==9:
+
+		for a in l:
+
+			if a not in p and a!='0':
+				p+=a
+
+			else:
+
+				break
+
+		if p==l:
+
+			x=int(l)
+
+print(x)
+

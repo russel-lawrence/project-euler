@@ -1,0 +1,9 @@
+import math
+k,n=0,5
+while k!=2:
+	x=n*((2*n)-1)
+	if (math.sqrt((2*x)+0.25)-0.5)==int(math.sqrt((2*x)+0.25)-0.5) and (math.sqrt((6*x)+(1/36))+(1/6))==int(math.sqrt((6*x)+(1/36))+1/6):
+		k+=1
+	n+=1
+n-=1
+print(n*(2*n-1))

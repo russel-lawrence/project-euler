@@ -1,0 +1,10 @@
+l=[]
+p=[]
+for a in range(2,101,1):
+	for b in range(2,101,1):
+		l.append(a**b)
+l.sort()
+for i in l:
+	if i not in p:
+		p.append(i)
+print(len(p))

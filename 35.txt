@@ -1,0 +1,24 @@
+import math
+def prime(n):
+	if n==2:
+		return True
+	elif n%2==0:
+		return False
+	else:
+		for abc in range(3,int(math.sqrt(n))+1,2):
+			if n%abc==0:
+				return False
+	return True
+
+c=0
+for i in range(3,1000000,2):
+	x=str(i)
+	t=True
+	for j in range(0,len(x)):
+		t = t and prime(int(x))
+		x=x[1:]+x[0]
+	if t==True:
+		c+=1
+		print(i)
+c+=1
+print('the number of circular primes is: '+str(c))

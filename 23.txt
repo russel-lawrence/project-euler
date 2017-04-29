@@ -1,0 +1,22 @@
+import math
+a=[]
+for j in range(11,28124):
+	s1=0
+	for i in range(2,int(math.sqrt(j))+1):
+		if j%i==0 and j/i==i:
+			s1+=i
+		elif j%i==0:
+			s1+=i+j/i
+	s1+=1
+	if j<s1:
+		a.append(j)
+b=[]
+for i in range(28123*2+1):
+	b.append(i)
+for i in range(0,len(a)):
+	for j in range(i,len(a)):
+		s1=a[i]+a[j]
+		b[s1]=0
+for i in range(28123,len(b)):
+	b[i]=0
+print(sum(b))

@@ -1,0 +1,24 @@
+import math
+s=0
+x=0
+for i in range(2,50000,1):
+	for j in range(2,int(math.sqrt(i))+1):
+		if i%j==0 and i%j!=j:
+			p=[]
+			t=0
+			x=str(i)+str(j)+str(int(i/j))
+			for m in x:
+				if m not in p:
+					p.append(m)
+				else:
+					t+=1
+					break
+			if t!=0:
+				continue
+			p.sort()
+			if len(p)==9 and p[0]=='1':
+				print(i)
+				print(x,end='\n\n')
+				s+=i
+				break
+print(s)

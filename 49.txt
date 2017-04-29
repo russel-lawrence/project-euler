@@ -1,0 +1,42 @@
+import math
+def isprime(x):
+	if x==2 or x==3:
+		return True
+	if x%2==0:
+		return False
+	w,q=5,2
+	while w<int(math.sqrt(x)+1):
+		if x%w==0:
+			return False
+		w+=q
+		q=6-q
+	return True
+
+def perm(a,b,c):
+	m,n,o=[],[],[]
+	if len(str(a))==len(str(b))==len(str(c)):
+		for t in str(a):
+			m.append(t)
+		m.sort()
+		for t in str(b):
+			n.append(t)
+		n.sort()
+		for t in str(c):
+			o.append(t)
+		o.sort()
+		if m==n==o:
+			return True
+	else:
+		return False
+v=''
+for i in range(1001,9998,2):
+	for j in range(2,5000,2):
+		if i+2*j<10000:
+			if isprime(i) and isprime(i+j) and isprime(i+2*j):
+				if perm(i,i+j,i+2*j):
+					print('World')
+					v=str(i)+str(i+j)+str(i+2*j)
+					print(v)
+					i=9999
+					break
+print("Hello")

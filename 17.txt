@@ -1,0 +1,21 @@
+a=['','one','two','three','four','five','six','seven','eight','nine']
+b=['ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen']
+c=['twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety']
+x=0
+for i in range(1,1001):
+	if len(str(i))==1:
+		x+=len(a[i])
+	elif len(str(i))==2:
+		if int(i/10)==1:
+			x+=len(b[i%10])
+		else:
+			x+=len(c[int((i/10))%10-2])+len(a[(i%10)])
+	elif len(str(i))==3:
+		if int((i/10))%10==1:
+			x+=len(a[int(i/100)])+10+len(b[int(i%10)])
+		elif len(str(i%100))==2:
+			x+=len(c[int((i%100)/10)-2])+len(a[(i%10)])+10+len(a[int(i/100)])
+		else:
+			x+=len(a[i%10])+ len(a[i//100]) +10
+x+=11-27
+print(x)

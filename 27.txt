@@ -1,0 +1,23 @@
+import math
+def prime(x):
+	if x==2:
+		return True
+	if x%2==0 or x==1 or x<0:
+		return False
+	for m in range(3,int(math.sqrt(x))+1,2):
+		if x%m==0:
+			return False
+	return True
+
+x,p=0,0
+for a in range(-1000,1001):
+	for b in range(3,998,2):
+		if (a*a-4*b)>0 and (-a/2>0):
+			continue
+		n=0
+		while(prime(n*n+a*n+b)):
+			n+=1
+		if x<n:
+			x=n
+			p=a*b
+print(p)
